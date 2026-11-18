@@ -7,6 +7,7 @@ int main() {
 
     int values[n];
     int table[m];
+    int collisions = 0;
 
     for (int i = 0; i < m; i++)
         table[i] = -1;
@@ -15,14 +16,20 @@ int main() {
         values[i] = (188 + 13 * i) % 100;
 
         int index = values[i] % m;
+        int probes = 0;
 
-        if (table[index] == -1)
+        while (table[index] != -1 && probes < m) {
+            collisions++;
+            probes++;
+            index = (index + 1) % m;
+        }
+
+        if (probes < m)
             table[index] = values[i];
-        else
-            cout << "Collision for key: " << values[i] << endl;
     }
 
-    cout << "Basic insertion completed." << endl;
+    cout << "Linear Probing Completed." << endl;
+    cout << "Total Collisions: " << collisions << endl;
 
     return 0;
 }
