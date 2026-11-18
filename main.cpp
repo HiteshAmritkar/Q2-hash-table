@@ -1,3 +1,9 @@
+/*
+ * PRN: 202501100188 | Seed (S): 188
+ * Scenario: Mango varieties | Dataset Size: 20 | Table Size (m): 23
+ * Hash Function: Division Method (key % 23)
+ * Collision Handling: Linear Probing
+ */
 #include <iostream>
 #include <iomanip>
 using namespace std;
