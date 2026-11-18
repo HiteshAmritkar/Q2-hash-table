@@ -1,19 +1,15 @@
 #include <iostream>
 using namespace std;
 
+int hashFunction(int key) {
+    return key % 23;
+}
+
 int main() {
-    const int n = 20;
-    int values[n];
+    int key = 88;
 
-    cout << "PRN: 202501100188" << endl;
-    cout << "Scenario: Mango varieties" << endl;
-
-    cout << "Generated Dataset: ";
-
-    for (int i = 0; i < n; i++) {
-        values[i] = (188 + 13 * i) % 100;
-        cout << values[i] << " ";
-    }
+    cout << "Key: " << key << endl;
+    cout << "Hash Index: " << hashFunction(key) << endl;
 
     return 0;
 }
